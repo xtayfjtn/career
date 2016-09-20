@@ -1,5 +1,5 @@
 // frog.cpp : Defines the entry point for the console application.
-//
+//http://www.cnblogs.com/wizardkeven/p/5887020.html
 
 #include "stdafx.h"
 //#include <iostream>
