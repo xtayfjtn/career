@@ -123,16 +123,26 @@ int map[MAX_CUL][MAX_CUL];
 int step[MAX_CUL][MAX_CUL];
 
 int getX(int l){
-	return l%n;
-}
-
-int getY(int l){
 	return l / n;
 }
 
-//int getC(int x, int y){
-//	return x * n + y;
-//}
+int getY(int l){
+	return l % n;
+}
+
+int getC(int x, int y){
+	return x * n + y;
+}
+
+bool getpath(vector<int> &list, int x, int y, int p)
+{
+	
+}
+
+void printpath(vector<int> &list)
+{
+	
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -149,11 +159,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		for (int j = 0; j < m; j++)
 		{
-			map[i][j] = -1;
+			step[i][j] = -1;
 		}
 	}
 
-	vector<int> list;//save the road.
+	vector<int> list;//save the path.
+
+	if (getpath(list, 0, 0, p))
+	{
+		printpath(list);
+	}
+	 else
+	 {
+		 cout << "Can not escape!" << endl;
+	 }
 	return 0;
 }
 
