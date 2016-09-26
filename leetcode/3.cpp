@@ -32,3 +32,27 @@ public:
         return maxlenth;
     }
 };
+
+
+/**
+2
+**/
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        map<char, int> charmap;
+        int maxlen = 0;
+        int start = -1;
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(charmap.count(s[i]) != 0)
+            {
+                start = max(start,charmap[s[i]]);
+            }
+            charmap[s[i]] = i;
+            maxlen = max(maxlen, i - start);
+        }
+        return maxlen;
+    }
+};
